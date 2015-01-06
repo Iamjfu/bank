@@ -1,0 +1,115 @@
+@mixin blue-colors {
+  background-color:#0b2a72;
+  &:hover,
+  &:focus {
+    background-color:#0c328b;
+  }
+  &:active {
+    background-color:#0033a9;
+  }
+}
+
+.loginArea {
+  background-color:#a2c27f;
+  width:360px;
+  text-align:center;
+  position:absolute;
+  .loginHeader {
+    background-color:#5b8f22;
+    color:#eee;
+    padding:10px 30px;
+    width:100% -60px;
+  }
+  label {
+    transition: // setting the transition times for when you click to log in
+      background 0.8s,
+      color 0.2s,
+      left 0.8s,
+      padding 0.2s;
+    position: absolute;
+    color: #999;
+    padding-top:10px;
+  }
+  .loginForm {
+    width:100%;
+    padding:20px 0px;
+    #userNameArea {
+      label {
+        left:70px;
+        top:98px;
+      }
+      .loginInput {
+        &:focus + label {
+          left:270px;
+        }
+      }
+    }
+    #passwordArea {
+      label {
+        left:70px;
+        top:166px;
+      }
+      .loginInput {
+        &:focus + label {
+          left:270px;
+        }
+      }
+    }
+    .loginInput {
+      padding:10px;
+      border:1px solid #eee;
+      margin-bottom:10px;
+      outline:none;
+      &:focus {
+        border:1px solid #f06d06;
+      }
+      &:focus + label {
+        background: #f06d06;
+        color: white;
+        text-transform: uppercase;
+        padding:1.65em 1em;
+        font-size:0.5em;
+        left:270px;
+      }
+    }
+    .loginSubmit {
+      font-size:.7em;
+      color:#eee;
+      background-color:#0b2a72;
+      padding:8px 20px;
+      border:none;
+      outline:none;
+      @include blue-colors;
+    }
+  }
+  .links {
+    a {
+      display:block;
+      text-decoration:none;
+      background-color:#852b2b;
+      color:#eee;
+      font-size:.7em;
+      padding:8px 20px;
+      border:none;
+      outline:none;
+      width:30px;
+      margin:auto;
+    }
+  }
+  .eCommerce {
+    background-color:#cddebe;
+    height:70px;
+    margin-bottom:10px;
+    a,
+    p {
+      display:inline-block;
+      position:relative;
+      top:-10px;
+    }
+    h4 {
+      position:relative;
+      color:#212121;
+      top:15px;
+    }
+  }
+}
