@@ -1,5 +1,5 @@
 <header>
-  <h1>This is a fake Fifth Thirds look-a-like bank website.</h1>
+  <h1>This is a fake Fifth Third look-a-like bank website.</h1>
   <p>It is completely for front end web development learning. The images and information belong to 5/3 but this is being hosted privately and not being actually used.</p>
 </header>
 
