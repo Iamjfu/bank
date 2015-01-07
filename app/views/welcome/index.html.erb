@@ -1,2 +1,43 @@
-<main></main>
-<div class="left-sidebar"></div>
+<main>
+  <!-- The main content slider -->
+    <div class="slider">
+      <!--First Image-->
+    	<input type="radio" name="slide_switch" id="id1"/>
+      	<label for="id1">
+      		<img src="http://i.imgur.com/ur8mkWQ.jpg" width="100"/>
+      	</label>
+    	<img class="button" src="http://i.imgur.com/Pitub8x.jpg"/>
+    	<!--show the second image by default-->
+    	<input type="radio" name="slide_switch" id="id2" checked="checked"/>
+      	<label id="label2" for="id2">
+      		<img src="http://i.imgur.com/D13zg03.jpg" width="100"/>
+      	</label>
+    	<img src="http://i.imgur.com/ktUX984.jpg"/>
+    	<!--Third Image-->
+    	<input type="radio" name="slide_switch" id="id3"/>
+      	<label id="label3" for="id3">
+      		<img src="http://i.imgur.com/QlW4XpI.jpg" width="100"/>
+      	</label>
+    	<img src="http://i.imgur.com/PYGCEBV.jpg"/>
+    
+    </div>
+</main>
+<section class="left-sidebar">
+  <h4>Branch &amp; ATM Locator</h4>
+  <form action="">
+    <div class="switch">
+      <input type="radio" class="switch-input" name="view" value="week" id="week" checked>
+        <label for="week" class="switch-label switch-label-off">BRANCH</label>
+      <input type="radio" class="switch-input" name="view" value="month" id="month">
+        <label for="month" class="switch-label switch-label-on">ATM</label>
+      <span class="switch-selection"></span>
+    </div>
+    <br>
+    <span>
+      <input class="basic-slide" id="zipCode" type="text" placeholder="Zip Code" size="5" maxlength="5" />
+      <label for="name">Zip Code</label>
+    </span>
+    <input class="blueButton" type="submit" name="submitLocation" value="Find">
+  </form>
+</section>
+<section class="helpful-links"></section>

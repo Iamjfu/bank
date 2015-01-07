@@ -1,3 +1,204 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin blue-colors {
+  background-color:#0b2a72;
+  &:hover,
+  &:focus {
+    background-color:#0c328b;
+  }
+  &:active {
+    background-color:#0033a9;
+  }
+}
+
+// main area container
+main {
+  display:block;
+  height:416px;
+  width:75%;
+  position:absolute;
+  right:0px;
+}
+
+.slider {
+	width: 100%;
+	height:100%;
+	position: relative;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+	img {
+    width:70%;
+    height:100%;
+  }
+  >img{
+  	position: absolute;
+  	left: 0; top: 0;
+  	transition: all 0.4s;
+  }
+  input[name='slide_switch'] {
+  	display: none;
+  }
+  label {
+  	/*Lets add some spacing for the thumbnails*/
+  	margin: 18px 0 0 18px;
+  	border: 3px solid #999;
+  	height:32%;
+     width:30%;
+  	position:absolute;
+    right:0;
+    top:-18px;
+  	cursor: pointer;
+  	transition: all 0.5s;
+  	/*Default style = low opacity*/
+  	opacity: 0.4;
+  	img {
+    	display: block;
+      height:100%;
+      width:100%;
+    }
+  }
+  #label2 {
+    top:29%;
+  }
+  
+  #label3 {
+    top:62.6%;
+  }
+  input[name='slide_switch']:checked+label {
+  	border-color: #666;
+  	opacity: 1;
+  }
+  input[name='slide_switch'] ~ img {
+  	opacity: 0;
+  	transform: scale(1.05);
+  }
+  input[name='slide_switch']:checked+label+img {
+  	opacity: 1;
+  	transform: scale(1);
+  }
+}
+
+.left-sidebar {
+  position:relative;
+  top:395px;
+  background-color:#eee;
+  height:200px;
+  width:25%;
+  text-align:center;
+  h4 {
+    background-color:#0b2a72;
+    color:#eee;
+    padding:15px 0px;
+  }
+  .switch {
+    position: relative;
+    height: 26px;
+    width: 120px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    .switch-label {
+      position: relative;
+      z-index: 2;
+      float: left;
+      width: 58px;
+      line-height: 26px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.35);
+      text-align: center;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+      cursor: pointer;
+      &:active {
+        font-weight: bold;
+      }
+    }
+    .switch-label-off {
+      padding-left: 2px;
+    }
+    .switch-label-on {
+      padding-right: 2px;
+    }
+    .switch-input {
+      display: none;
+    }
+    .switch-input:checked + .switch-label {
+      font-weight: bold;
+      color: rgba(238, 238, 238, 0.65);
+      text-shadow: 0 1px rgba(255, 255, 255, 0.25);
+      -webkit-transition: 0.25s ease-out;
+      -moz-transition: 0.25s ease-out;
+      -ms-transition: 0.25s ease-out;
+      -o-transition: 0.25s ease-out;
+      transition: 0.25s ease-out;
+      -webkit-transition-property: color, text-shadow;
+      -moz-transition-property: color, text-shadow;
+      -ms-transition-property: color, text-shadow;
+      -o-transition-property: color, text-shadow;
+      transition-property: color, text-shadow;
+    }
+    .switch-input:checked + .switch-label-on ~ .switch-selection {
+      left: 60px;
+      /* Note: left: 50%; doesn't transition in WebKit */
+    }
+    .switch-selection {
+      position: absolute;
+      z-index: 1;
+      top: 2px;
+      left: 2px;
+      display: block;
+      width: 58px;
+      height: 22px;
+      border-radius: 3px;
+      background-color: #699019;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9dd993), color-stop(100%, #699019));
+      background-image: -webkit-linear-gradient(top, #9dd993, #699019);
+      background-image: -moz-linear-gradient(top, #9dd993, #699019);
+      background-image: -ms-linear-gradient(top, #9dd993, #699019);
+      background-image: -o-linear-gradient(top, #9dd993, #699019);
+      background-image: linear-gradient(top, #9dd993, #699019);
+      -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+      -webkit-transition: left 0.25s ease-out;
+      -moz-transition: left 0.25s ease-out;
+      -ms-transition: left 0.25s ease-out;
+      -o-transition: left 0.25s ease-out;
+      transition: left 0.25s ease-out;
+    }
+  }
+  .basic-slide {
+    padding:10px;
+    outline:none;
+    + label {
+      visibility:hidden;
+      opacity:0;
+      position:absolute;
+      left:29.5%;
+      background-color:#f06d06;
+      color:#eee;
+      padding:16px;
+      font-size:0.5em;
+      transition:
+        opacity 0.5s,
+        left 0.5s;
+      -webkit-transition:
+        opacity 0.5s,
+        left 0.5s;
+    }
+    &:focus + label {
+      visibility:visible;
+      opacity:1;
+      left:11%;
+    }
+  }
+  .blueButton {
+      font-size:.7em;
+      color:#eee;
+      background-color:#0b2a72;
+      padding:8px 20px;
+      border:2px solid #0033a9;
+      outline:none;
+      @include blue-colors;
+      -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.45);
+  }
+}
